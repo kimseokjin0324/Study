@@ -1,5 +1,6 @@
 package com.kimseokjin.hompage.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -14,6 +15,7 @@ public class Role {
 
     private String name;
     @ManyToMany(mappedBy = "roles")
+    @JsonIgnore
     private List<User> users;
 
 }
